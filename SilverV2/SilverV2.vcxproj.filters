@@ -1,0 +1,245 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="framework.h" />
+    <ClInclude Include="FortGameModeAthena.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="GameMode.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Globals.h" />
+    <ClInclude Include="MinHook\include\MinHook.h">
+      <Filter>MinHook</Filter>
+    </ClInclude>
+    <ClInclude Include="HookingManager.h" />
+    <ClInclude Include="Memory.h" />
+    <ClInclude Include="GameModeBase.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="FortPlaylist.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="FortPlaylistAthena.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="GameState.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="FortGameStateAthena.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="FortGameMode.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="World.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="KismetSystemLibrary.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="GameInstance.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="GameViewportClient.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="NetDriver.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="FortEngine.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="KismetStringLibrary.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Actor.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerController.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="FortPlayerController.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="FortPlayerPawn.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Pawn.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Controller.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="FortPlayerState.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="AthenaCharacterItemDefinition.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="GameplayStatics.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="FortPlayerStateAthena.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Abilities.h" />
+    <ClInclude Include="Inventory.h" />
+    <ClInclude Include="FortInventory.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="FortItemDefinition.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="FortWorldItem.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="FortItem.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="GameplayAbility.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="AbilitySystemComponent.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="FortAbilitySystemComponent.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="FortAbilitySet.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="FortGameplayAbility.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="FortGameModeAthena.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="GameMode.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="MinHook\src\trampoline.c">
+      <Filter>MinHook</Filter>
+    </ClCompile>
+    <ClCompile Include="MinHook\src\hde\hde32.c">
+      <Filter>MinHook</Filter>
+    </ClCompile>
+    <ClCompile Include="MinHook\src\hde\hde64.c">
+      <Filter>MinHook</Filter>
+    </ClCompile>
+    <ClCompile Include="MinHook\src\hook.c">
+      <Filter>MinHook</Filter>
+    </ClCompile>
+    <ClCompile Include="MinHook\src\buffer.c">
+      <Filter>MinHook</Filter>
+    </ClCompile>
+    <ClCompile Include="GameModeBase.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="FortPlaylist.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="FortPlaylistAthena.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="GameState.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="FortGameStateAthena.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="FortGameMode.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="World.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="KismetSystemLibrary.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="GameInstance.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="GameViewportClient.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="NetDriver.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="FortEngine.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="KismetStringLibrary.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="Actor.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerController.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="FortPlayerController.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="FortPlayerPawn.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="Pawn.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="Controller.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="FortPlayerState.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="AthenaCharacterItemDefinition.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="GameplayStatics.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="FortPlayerStateAthena.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="Inventory.cpp" />
+    <ClCompile Include="FortInventory.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="FortItemDefinition.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="FortWorldItem.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="FortItem.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="GameplayAbility.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="AbilitySystemComponent.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="FortAbilitySystemComponent.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="FortAbilitySet.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="FortGameplayAbility.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Classes">
+      <UniqueIdentifier>{ba77654f-4e5e-44d9-9c50-e861613a6023}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MinHook">
+      <UniqueIdentifier>{f9247221-a73c-434f-8406-1fc7dc023765}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
