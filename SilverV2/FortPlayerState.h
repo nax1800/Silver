@@ -2,11 +2,11 @@
 #include <SDK.h>
 using namespace SDK;
 
-#include "Actor.h"
+#include "PlayerState.h"
 
 #include "FortAbilitySystemComponent.h"
 
-class AFortPlayerState : public AActor
+class AFortPlayerState : public APlayerState
 {
 public:
 	DEFINE_PTR(UObject, AFortPlayerState, HeroType);

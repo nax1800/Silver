@@ -3,6 +3,8 @@
 using namespace SDK;
 
 #include "GameInstance.h"
+#include "GameModeBase.h"
+#include "GameStateBase.h"
 
 class UNetDriver;
 
@@ -37,6 +39,8 @@ class UWorld : public UObject
 public:
 	DEFINE_PTR(UGameInstance, UWorld, OwningGameInstance);
 	DEFINE_PTR(UNetDriver, UWorld, NetDriver);
+	DEFINE_PTR(AGameModeBase, UWorld, AuthorityGameMode);
+	DEFINE_PTR(AGameStateBase, UWorld, GameState);
 
 	DEFINE_MEMBER(TArray<FLevelCollection>, UWorld, LevelCollections);
 

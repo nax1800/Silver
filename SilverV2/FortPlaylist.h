@@ -13,6 +13,7 @@ public:
 	DEFINE_MEMBER(FName, UFortPlaylist, PlaylistName);
 	DEFINE_MEMBER(int, UFortPlaylist, PlaylistId);
 	DEFINE_BOOL(bool, UFortPlaylist, bAllowJoinInProgress);
+	DEFINE_MEMBER(uint8, UFortPlaylist, DefaultFirstTeam);
 
 public:
 	static UClass* StaticClass()

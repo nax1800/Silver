@@ -173,6 +173,7 @@
     <ClInclude Include="GameplayAbility.h" />
     <ClInclude Include="GameplayStatics.h" />
     <ClInclude Include="GameState.h" />
+    <ClInclude Include="GameStateBase.h" />
     <ClInclude Include="GameViewportClient.h" />
     <ClInclude Include="Globals.h" />
     <ClInclude Include="HookingManager.h" />
@@ -184,6 +185,7 @@
     <ClInclude Include="NetDriver.h" />
     <ClInclude Include="Pawn.h" />
     <ClInclude Include="PlayerController.h" />
+    <ClInclude Include="PlayerState.h" />
     <ClInclude Include="World.h" />
   </ItemGroup>
   <ItemGroup>
@@ -215,6 +217,7 @@
     <ClCompile Include="GameplayAbility.cpp" />
     <ClCompile Include="GameplayStatics.cpp" />
     <ClCompile Include="GameState.cpp" />
+    <ClCompile Include="GameStateBase.cpp" />
     <ClCompile Include="GameViewportClient.cpp" />
     <ClCompile Include="Inventory.cpp" />
     <ClCompile Include="KismetSystemLibrary.cpp" />
@@ -227,6 +230,7 @@
     <ClCompile Include="NetDriver.cpp" />
     <ClCompile Include="Pawn.cpp" />
     <ClCompile Include="PlayerController.cpp" />
+    <ClCompile Include="PlayerState.cpp" />
     <ClCompile Include="World.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

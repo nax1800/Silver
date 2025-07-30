@@ -116,22 +116,29 @@ namespace Abilities
         if (!AbilitySystemComponent)
             return;
 
-        FGameplayAbilitySpec NewSpec{};
-        NewSpec.Handle.Handle = rand(); // proper!
-        NewSpec.Ability = reinterpret_cast<UGameplayAbility*>(GameplayAbilityClass->GetClassDefaultObject());
-        NewSpec.Level = 1;
-        NewSpec.InputID = -1;
-        NewSpec.SourceObject = nullptr;
+        if (!GameplayAbilityClass || !GameplayAbilityClass->GetClassDefaultObject())
+            return;
 
+        /*
+            memory leak or sum shi happens here, got absolutely no clue.
+        */
+
+        FGameplayAbilitySpec NewSpec{};
+        SpecConstructor(&NewSpec, GameplayAbilityClass->GetClassDefaultObject(), 1, -1, nullptr);
+          
         reinterpret_cast<FGameplayAbilitySpecHandle* (*)(UAbilitySystemComponent * _this, FGameplayAbilitySpecHandle * outHandle, FGameplayAbilitySpec inSpec)>(Memory::GetImageBase() + 0x843df0)(AbilitySystemComponent, &NewSpec.Handle, NewSpec);
     }
 
     inline void ApplyAbilities(AFortPlayerStateAthena* PlayerState)
     {
-        static UFortAbilitySet* AbilitySet = reinterpret_cast<UFortAbilitySet*>(GUObjectArray.FindObject("GAS_DefaultPlayer"));
-        auto GameplayAbilities = AbilitySet->GetGameplayAbilities(); // crash here or sum
+        static UFortAbilitySet* AbilitySet = reinterpret_cast<UFortAbilitySet*>(GUObjectArray.FindObject("GAS_AthenaPlayer"));
+        auto GameplayAbilities = AbilitySet->GetGameplayAbilities();
         for (int i = 0; i < GameplayAbilities.Num(); i++)
         {
+            if (!GameplayAbilities.IsValidIndex(i))
+                continue;
+
+            UE_LOG(LogFortSDK, Log, " GameplayAbilities.GetData(i)->GetClassDefaultObject(): %s", GameplayAbilities.GetData(i)->GetClassDefaultObject()->GetFName().ToString().ToString().c_str());
             GrantGameplayAbility(PlayerState, GameplayAbilities.GetData(i));
         }
     }

@@ -4,6 +4,8 @@ using namespace SDK;
 
 #include "FortPlayerState.h"
 
+struct FUniqueNetIdRepl;
+
 class AFortPlayerStateAthena : public AFortPlayerState
 {
 public:

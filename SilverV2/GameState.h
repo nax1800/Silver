@@ -2,7 +2,9 @@
 #include <SDK.h>
 using namespace SDK;
 
-class AGameState : public UObject
+#include "GameStateBase.h"
+
+class AGameState : public AGameStateBase
 {
 public:
 

@@ -33,8 +33,9 @@ static __int64 hkDispatchRequest(__int64 a1, __int64* a2, int a3)
     return oDispatchRequest(a1, a2, 3);
 }
 
-BYTE* __fastcall hkChangeGameSessionId()
+BYTE* __fastcall hkChangeGameSessionId(UObject* a1)
 {
+    UE_LOG(LogFortSDK, Log, "hkChangeGameSessionId: a1: %s", a1->GetFName().ToString().ToString().c_str());
     return nullptr;
 }
 
@@ -84,10 +85,13 @@ DWORD Main(LPVOID)
     UKismetSystemLibrary::ExecuteConsoleCommand(GetWorld(), L"open Athena_Terrain", nullptr);
     GetWorld()->GetOwningGameInstance()->GetLocalPlayers().Remove(0);
 
-    HookingManager::CreateHook("ReadyToStartMatch", 0x307C130, AGameMode::hkReadyToStartMatch, (void**)&AGameMode::oReadyToStartMatch);
-    HookingManager::CreateHook("SpawnDefaultPawnFor", 0xFB4A00, AGameModeBase::hkSpawnDefaultPawnFor);
-    HookingManager::CreateHook("TickFlush", 0x2D39300, UNetDriver::hkTickFlush, (void**)&UNetDriver::oTickFlush);
-    HookingManager::CreateHook("KickPlayer", 0x2C03D20, hkKickPlayer);
+    HookingManager::CreateHook("AGameMode::ReadyToStartMatch", 0x307C130, AGameMode::hkReadyToStartMatch, (void**)&AGameMode::oReadyToStartMatch);
+    HookingManager::CreateHook("AGameModeBase::SpawnDefaultPawnFor", 0xFB4A00, AGameModeBase::hkSpawnDefaultPawnFor);
+   //  HookingManager::CreateHook("AGameModeBase::GetGameSessionClass", 0xFA0B10, AGameModeBase::hkGetGameSessionClass);
+    HookingManager::CreateHook("AFortGameModeAthena::PickTeam", 0xFA9B20, AFortGameModeAthena::hkPickTeam);
+
+    HookingManager::CreateHook("UNetDriver:TickFlush", 0x2D39300, UNetDriver::hkTickFlush, (void**)&UNetDriver::oTickFlush);
+    HookingManager::CreateHook("AGameSession::KickPlayer", 0x2C03D20, hkKickPlayer);
     HookingManager::CreateHook("CollectGarbage", 0x1E054E0, CollectGarbage);
     HookingManager::CreateHook("NoMCP", 0x13876d0, hkNoMCP);
     HookingManager::CreateHook("DispatchRequest", 0xcf2e80, hkDispatchRequest, (void**)&oDispatchRequest);
@@ -97,12 +101,10 @@ DWORD Main(LPVOID)
     HookingManager::CreateHook("AActor::GetNetMode", 0x29A40F0, AActor::hkGetNetMode);
 
     UObject* PlayerControllerDefaultObj = GUObjectArray.FindObject("Default__Athena_PlayerController_C");
-
     HookingManager::VirtualHook(PlayerControllerDefaultObj, 0x108, APlayerController::hkServerAcknowledgePossession);
     HookingManager::VirtualHook(PlayerControllerDefaultObj, 0x25F, AFortPlayerController::hkServerReadyToStartMatch, (void**)&AFortPlayerController::oServerReadyToStartMatch);
 
     UObject* FortAbilitySystemComponentAthenDefaultObj = GUObjectArray.FindObject("Default__FortAbilitySystemComponentAthena");
-
     HookingManager::VirtualHook(FortAbilitySystemComponentAthenDefaultObj, 0xF4, Abilities::hkInternalServerTryActivateAbility);
 
     return 1;

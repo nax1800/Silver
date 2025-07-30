@@ -14,8 +14,10 @@ public:
 	DEFINE_PTR(UObject, AGameModeBase, GameSession);
 
 public:
-	UObject* SpawnDefaultPawnAtTransform(UObject* NewPlayer, const FTransform& SpawnTransform);
 	static UObject* hkSpawnDefaultPawnFor(AGameModeBase* GameMode, UObject* NewPlayer, AActor* StartSpot);
+	static UClass* hkGetGameSessionClass(AGameModeBase* GameMode, __int64 a2);
+
+	UObject* SpawnDefaultPawnAtTransform(UObject* NewPlayer, const FTransform& SpawnTransform);
 
 public:
 	static UClass* StaticClass()

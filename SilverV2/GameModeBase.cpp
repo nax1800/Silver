@@ -14,3 +14,11 @@ UObject* AGameModeBase::hkSpawnDefaultPawnFor(AGameModeBase* GameMode, UObject* 
 
 	return GameMode->SpawnDefaultPawnAtTransform(NewPlayer, StartSpot->GetTransform());
 }
+
+UClass* AGameModeBase::hkGetGameSessionClass(AGameModeBase* GameMode, __int64 a2)
+{
+	UE_LOG(LogGameModeBase, Log, "GetGameSessionClass Called.");
+
+	static UClass* GameSessionClass = StaticClassImpl("FortGameSessionDedicatedAthena");
+	return GameSessionClass;
+}
