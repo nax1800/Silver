@@ -4,6 +4,8 @@ using namespace SDK;
 
 #include "Controller.h"
 
+DEFINE_LOG_CATEGORY(LogPlayerController);
+
 class AFortPlayerController;
 class AFortPlayerPawn;
 class AFortPlayerState;

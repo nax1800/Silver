@@ -19,6 +19,20 @@ char hkKickPlayer(__int64, __int64, __int64)
     return 1;
 }
 
+static bool hkNoMCP() 
+{ 
+    return g_bNoMCP; 
+}
+
+static __int64 (*oDispatchRequest)(__int64 a1, __int64* a2, int a3);
+static __int64 hkDispatchRequest(__int64 a1, __int64* a2, int a3)
+{
+    if (g_bNoMCP)
+        return oDispatchRequest(a1, a2, a3);
+
+    return oDispatchRequest(a1, a2, 3);
+}
+
 BYTE* __fastcall hkChangeGameSessionId()
 {
     return nullptr;
@@ -27,16 +41,6 @@ BYTE* __fastcall hkChangeGameSessionId()
 void CollectGarbage()
 {
     return;
-}
-
-__int64 UWorldGetNetMode(UWorld*)
-{
-    return 1;
-}
-
-__int64 AActorGetNetMode(AActor*)
-{
-    return 1;
 }
 
 DWORD Main(LPVOID)
@@ -85,10 +89,12 @@ DWORD Main(LPVOID)
     HookingManager::CreateHook("TickFlush", 0x2D39300, UNetDriver::hkTickFlush, (void**)&UNetDriver::oTickFlush);
     HookingManager::CreateHook("KickPlayer", 0x2C03D20, hkKickPlayer);
     HookingManager::CreateHook("CollectGarbage", 0x1E054E0, CollectGarbage);
+    HookingManager::CreateHook("NoMCP", 0x13876d0, hkNoMCP);
+    HookingManager::CreateHook("DispatchRequest", 0xcf2e80, hkDispatchRequest, (void**)&oDispatchRequest);
 
     HookingManager::CreateHook("ChangeGameSessionId", 0x12E7410, hkChangeGameSessionId);
-    HookingManager::CreateHook("UWorldGetNetMode", 0x30100A0, UWorldGetNetMode);
-    HookingManager::CreateHook("AActorGetNetMode", 0x29A40F0, AActorGetNetMode);
+    HookingManager::CreateHook("UWorld::GetNetMode", 0x30100A0, UWorld::hkGetNetMode);
+    HookingManager::CreateHook("AActor::GetNetMode", 0x29A40F0, AActor::hkGetNetMode);
 
     UObject* PlayerControllerDefaultObj = GUObjectArray.FindObject("Default__Athena_PlayerController_C");
 

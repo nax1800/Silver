@@ -30,9 +30,6 @@ bool AGameMode::hkReadyToStartMatch(AGameMode* GameMode)
 			CurrentPlaylistInfo.SetBasePlaylist(PlaylistToUse);
 			CurrentPlaylistInfo.SetOverridePlaylist(PlaylistToUse);
 
-			// *(UFortPlaylistAthena**)(__int64(Casted_GameState) + 0x1C98) = PlaylistToUse;
-			// *(UFortPlaylistAthena**)(__int64(Casted_GameState) + 0x1C90) = PlaylistToUse;
-
 			CurrentPlaylistInfo.GetPlaylistReplicationKey()++;
 
 			Casted_GameState->SetCurrentPlaylistId(PlaylistToUse->GetPlaylistId());
@@ -46,6 +43,8 @@ bool AGameMode::hkReadyToStartMatch(AGameMode* GameMode)
 			g_bIsPlaylistLoaded = true;
 		}
 	}
+
+	
 
 	if (!Casted_GameState->GetMapInfo())
 		return false;

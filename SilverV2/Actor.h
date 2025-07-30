@@ -135,6 +135,8 @@ public:
 class AActor : public UObject
 {
 public:
+	static __int64 hkGetNetMode(AActor*);
+
 	FTransform GetTransform();
 public:
 	static UClass* StaticClass()

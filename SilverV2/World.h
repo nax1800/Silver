@@ -41,6 +41,7 @@ public:
 	DEFINE_MEMBER(TArray<FLevelCollection>, UWorld, LevelCollections);
 
 public:
+	static __int64 hkGetNetMode(UWorld*);
 	static bool hkListen(FURL& InURL);
 
 public:

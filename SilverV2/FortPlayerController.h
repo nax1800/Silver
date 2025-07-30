@@ -6,6 +6,8 @@ using namespace SDK;
 
 #include "AthenaCharacterItemDefinition.h"
 
+DEFINE_LOG_CATEGORY(LogFortPlayerController);
+
 class AFortInventory;
 
 struct FFortAthenaLoadout

@@ -6,6 +6,11 @@
 
 #include "KismetStringLibrary.h"
 
+__int64 UWorld::hkGetNetMode(UWorld*)
+{
+	return 1;
+}
+
 bool UWorld::hkListen(FURL& InURL)
 {
 
